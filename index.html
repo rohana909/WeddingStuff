@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planning Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Wedding Planning Dashboard</h1>
+            <p class="wedding-details">September 4, 2026 &bull; Royal Sonesta, Boston</p>
+            <div class="countdown" id="countdown"></div>
+        </div>
+    </header>
+
+    <section class="overview">
+        <div class="overview-cards">
+            <div class="overview-card">
+                <span class="overview-label">Total Tasks</span>
+                <span class="overview-value" id="total-tasks">65</span>
+            </div>
+            <div class="overview-card">
+                <span class="overview-label">Completed</span>
+                <span class="overview-value" id="completed-tasks">0</span>
+            </div>
+            <div class="overview-card">
+                <span class="overview-label">In Progress</span>
+                <span class="overview-value" id="inprogress-tasks">0</span>
+            </div>
+            <div class="overview-card">
+                <span class="overview-label">Budget</span>
+                <span class="overview-value" id="budget-display">$0 / $15,000</span>
+            </div>
+        </div>
+        <div class="overall-progress">
+            <div class="progress-label">Overall Progress</div>
+            <div class="progress-bar"><div class="progress-fill" id="overall-progress-fill"></div></div>
+        </div>
+    </section>
+
+    <section class="filters">
+        <div class="filter-row">
+            <input type="text" id="search-input" placeholder="Search tasks..." class="search-box">
+            <select id="filter-phase">
+                <option value="all">All Phases</option>
+                <option value="1">Phase 1: NOW - URGENT</option>
+                <option value="2">Phase 2: MID-STAGE</option>
+                <option value="3">Phase 3: FINAL PREP</option>
+                <option value="4">Phase 4: WEEK BEFORE</option>
+            </select>
+            <select id="filter-category">
+                <option value="all">All Categories</option>
+                <option value="vendors">Vendors</option>
+                <option value="invitations">Invitations</option>
+                <option value="budget">Budget & Logistics</option>
+                <option value="ceremony">Ceremony & Puja</option>
+                <option value="decor">Decor & Design</option>
+                <option value="media">Media</option>
+                <option value="food">Food & Cake</option>
+                <option value="attire">Attire & Beauty</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="personal">Personal & Other</option>
+            </select>
+            <select id="filter-owner">
+                <option value="all">All Owners</option>
+                <option value="You">You</option>
+                <option value="Fiancé">Fianc&eacute;</option>
+                <option value="Both">Both</option>
+                <option value="Family">Family</option>
+            </select>
+            <select id="filter-status">
+                <option value="all">All Statuses</option>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button id="print-btn" class="print-btn" onclick="window.print()">Print</button>
+        </div>
+    </section>
+
+    <section class="budget-summary" id="budget-summary">
+        <h2>Budget Tracker</h2>
+        <div class="budget-table" id="budget-table"></div>
+    </section>
+
+    <main id="phases-container"></main>
+
+    <footer>
+        <p>Made with love for September 4, 2026</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
